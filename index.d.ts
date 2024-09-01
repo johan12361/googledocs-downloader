@@ -14,4 +14,18 @@ declare module 'googledocs-downloader' {
    * or `null` if an error occurs.
    */
   export declare function getTxtDoc(documentId: string): Promise<string | null>
+
+  /**
+   * Extracts the Google Document ID from a given URL.
+   *
+   * This function takes a Google Docs URL and extracts the unique document ID
+   * using a regular expression. The ID is usually located between "/document/d/"
+   * and the next forward slash in the URL. If the ID cannot be extracted,
+   * the function throws an error.
+   *
+   * @param url - The full URL of the Google Document.
+   * @returns The extracted Google Document ID.
+   * @throws Will throw an error if the document ID cannot be extracted from the URL.
+   */
+  export declare function getIdDocFromUrl(url: string): string
 }
