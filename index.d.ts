@@ -30,18 +30,23 @@ declare module 'googledocs-downloader' {
   export declare function getIdDocFromUrl(url: string): string
 
   /**
-   * Saves the content of a Google Docs document as a text file (.txt) on the local filesystem.
+   * Downloads a Google Docs document in a specified format and saves it to the local filesystem.
    *
-   * @param documentId - The ID of the Google Docs document to be downloaded.
-   * @param dirPath - The path to the directory where the file will be saved.
-   * @param filename - The name of the file without the .txt extension.
-   * @param encoding - The character encoding to use when saving the file. Defaults to 'utf8'.
-   * @returns A promise that resolves to the file path if the document is saved successfully, or null if an error occurs.
+   * @async
+   * @function savefile
+   * @param {string} documentId - The ID of the Google Docs document to be downloaded.
+   * @param {string} dirPath - The path to the directory where the file will be saved.
+   * @param {string} filename - The name of the file without the extension.
+   * @param {'pdf' | 'docx' | 'odt' | 'rtf' | 'txt' | 'html'} format - The format to download the document in. Supported formats are 'pdf', 'docx', 'odt', 'rtf', 'txt', and 'html'.
+   * @returns {Promise<string | null>} - Returns the file path if the document is saved successfully, or null if an error occurs.
+   *
+   * @throws Will log an error to the console if the `documentId`, `dirPath`, `filename`, or `format` is invalid.
+   *         Will also log an error if there is an issue saving the file.
    */
-  export declare function savetxt(
+  export declare function savefile(
     documentId: string,
     dirPath: string,
     filename: string,
-    encoding?: string
+    format: 'pdf' | 'docx' | 'odt' | 'rtf' | 'txt' | 'html'
   ): Promise<string | null>
 }
