@@ -28,4 +28,20 @@ declare module 'googledocs-downloader' {
    * @throws Will throw an error if the document ID cannot be extracted from the URL.
    */
   export declare function getIdDocFromUrl(url: string): string
+
+  /**
+   * Saves the content of a Google Docs document as a text file (.txt) on the local filesystem.
+   *
+   * @param documentId - The ID of the Google Docs document to be downloaded.
+   * @param dirPath - The path to the directory where the file will be saved.
+   * @param filename - The name of the file without the .txt extension.
+   * @param encoding - The character encoding to use when saving the file. Defaults to 'utf8'.
+   * @returns A promise that resolves to the file path if the document is saved successfully, or null if an error occurs.
+   */
+  export declare function savetxt(
+    documentId: string,
+    dirPath: string,
+    filename: string,
+    encoding?: string
+  ): Promise<string | null>
 }

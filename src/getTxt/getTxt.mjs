@@ -12,7 +12,7 @@
  * or `null` if an error occurs.
  */
 export async function getTxtDoc(documentId) {
-  // Validate the documentId input
+  // Validar la entrada documentId
   if (!documentId || typeof documentId !== 'string') {
     console.error('Invalid documentId provided')
     return null
@@ -22,15 +22,15 @@ export async function getTxtDoc(documentId) {
   try {
     const response = await fetch(url)
 
-    // Check for HTTP errors
+    // Verificar errores HTTP
     if (!response.ok) {
       throw new Error(`Error downloading the document: ${response.status} ${response.statusText}`)
     }
 
     const data = await response.text()
-    return data // Return the downloaded text
+    return data // Devolver el texto descargado
   } catch (error) {
     console.error('Error downloading the document:', error.message)
-    return null // Return null in case of an error
+    return null // Devolver null en caso de error
   }
 }
