@@ -100,5 +100,5 @@ Si deseas contribuir a este proyecto, por favor realiza un fork del repositorio 
 
 ## Licencia
 
-MIT License. Puedes ver el archivo de [Licencia](LICENSE) para más detalles.
+MIT License. Puedes ver el archivo de [Licencia](LICENSE.md) para más detalles.
 

@@ -99,4 +99,4 @@ If you wish to contribute to this project, please fork the repository and submit
 
 ## License
 
-MIT License. See the [LICENSE](LICENSE) file for more details.
+MIT License. See the [LICENSE](LICENSE.md) file for more details.
